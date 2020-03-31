@@ -44,7 +44,7 @@ void Start()
             }
         }
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
         Debug.Log("BOOM");
     }
 }
