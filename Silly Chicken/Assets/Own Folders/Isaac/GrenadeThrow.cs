@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GrenadeThrow : MonoBehaviour
 {
+    GrenadeJump GJ;
 
+    public int maxAmmo = 5;
+    public int currentAmmo;
+    public int ammoPickup = 1;
+    
     public float throwForce = 40f;
     public GameObject grenadePrefab;
     public bool canThrow = true;
@@ -14,6 +19,8 @@ public class GrenadeThrow : MonoBehaviour
     void Start()
     {
         canThrow = true;
+        currentAmmo = maxAmmo;
+
     }
 
     // Update is called once per frame
@@ -22,6 +29,11 @@ public class GrenadeThrow : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ThrowGrenade();
+        }
+
+        if (currentAmmo <= 0)
+        {
+            canThrow = false;
         }
     }
 
@@ -32,6 +44,9 @@ public class GrenadeThrow : MonoBehaviour
             GameObject grenade = Instantiate(grenadePrefab, firingPoint.transform.position, firingPoint.transform.rotation);
             Rigidbody rb = grenade.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+
+            currentAmmo --;
+            Debug.Log(currentAmmo);
             StartCoroutine(ThrowingNadeDelay());
         }
     }
@@ -41,5 +56,13 @@ public class GrenadeThrow : MonoBehaviour
         canThrow = false;
         yield return new WaitForSeconds(2f);
         canThrow = true;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("GrenadeEgg"))
+        {
+            currentAmmo += 1;
+        }
     }
 }

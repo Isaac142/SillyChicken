@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GrenadeJump : MonoBehaviour
 {
-
     public float radius = 5.0f;
     public float power = 500.0f;
     public float upForce = 10f;
