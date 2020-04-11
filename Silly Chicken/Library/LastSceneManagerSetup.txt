@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Own Folders/Isaac/Grenade Test.unity
+- path: Assets/Main Scenes/_Scene_00.unity
   isLoaded: 1
   isActive: 1
