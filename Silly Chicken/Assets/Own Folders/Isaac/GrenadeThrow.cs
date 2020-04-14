@@ -31,9 +31,9 @@ public class GrenadeThrow : MonoBehaviour
             ThrowGrenade();
         }
 
-        if (currentAmmo <= 0)
+        if (currentAmmo > maxAmmo)
         {
-            canThrow = false;
+            currentAmmo = maxAmmo;
         }
     }
 
@@ -47,7 +47,15 @@ public class GrenadeThrow : MonoBehaviour
 
             currentAmmo --;
             Debug.Log(currentAmmo);
-            StartCoroutine(ThrowingNadeDelay());
+            if (currentAmmo > 0)
+            {
+                StartCoroutine(ThrowingNadeDelay());
+            }
+            //StartCoroutine(ThrowingNadeDelay());
+        }
+        if (currentAmmo <= 0)
+        {
+            canThrow = false;
         }
     }
 
@@ -62,7 +70,7 @@ public class GrenadeThrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GrenadeEgg"))
         {
-            currentAmmo += 1;
+            ammoPickup =+ ammoPickup;
         }
     }
 }
