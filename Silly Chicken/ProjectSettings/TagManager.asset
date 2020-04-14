@@ -9,6 +9,7 @@ TagManager:
   - Water
   - GrenadeEgg
   - Enemy
+  - Seed
   layers:
   - Default
   - TransparentFX
