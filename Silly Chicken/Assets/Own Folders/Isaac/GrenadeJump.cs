@@ -7,6 +7,7 @@ public class GrenadeJump : MonoBehaviour
     public float radius = 5.0f;
     public float power = 500.0f;
     public float upForce = 10f;
+    public int damage;
 
     public float delay = 3f;
     float countdown;
@@ -40,6 +41,12 @@ void Start()
             if(rb != null)
             {
                 rb.AddExplosionForce(power, transform.position, radius, upForce, ForceMode.Impulse);
+            }
+
+            EnemyHealth enemyHealth = nearbyObject.GetComponent<EnemyHealth>();
+            if(enemyHealth != null)
+            {
+                enemyHealth.currentHealth = enemyHealth.currentHealth - damage;
             }
         }
 

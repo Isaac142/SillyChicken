@@ -9,16 +9,20 @@ public class GrenadeThrow : MonoBehaviour
     public int maxAmmo = 5;
     public int currentAmmo;
     public int ammoPickup = 1;
-    
-    public float throwForce = 40f;
+
+    public bool canThrow;
+    public bool hasAmmo;
+
+    public float forwardThrowForce;
+    public float upwardThrowForce;
     public GameObject grenadePrefab;
-    public bool canThrow = true;
     public Transform firingPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         canThrow = true;
+        hasAmmo = true;
         currentAmmo = maxAmmo;
 
     }
@@ -35,27 +39,35 @@ public class GrenadeThrow : MonoBehaviour
         {
             currentAmmo = maxAmmo;
         }
+
+        if (currentAmmo >= 1)
+        {
+            hasAmmo = true;
+        }
+
+        if (currentAmmo <= 0)
+        {
+            hasAmmo = false;
+        }
     }
 
     void ThrowGrenade()
     {
-        if (canThrow)
+        if (hasAmmo)
         {
-            GameObject grenade = Instantiate(grenadePrefab, firingPoint.transform.position, firingPoint.transform.rotation);
-            Rigidbody rb = grenade.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
-
-            currentAmmo --;
-            Debug.Log(currentAmmo);
-            if (currentAmmo > 0)
+            if (canThrow)
             {
-                StartCoroutine(ThrowingNadeDelay());
+                GameObject grenade = Instantiate(grenadePrefab, firingPoint.transform.position, firingPoint.transform.rotation);
+                Rigidbody rb = grenade.GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward * forwardThrowForce, ForceMode.VelocityChange);
+
+                currentAmmo--;
+                Debug.Log(currentAmmo);
+                if (currentAmmo >= 1)
+                {
+                    StartCoroutine(ThrowingNadeDelay());
+                }
             }
-            //StartCoroutine(ThrowingNadeDelay());
-        }
-        if (currentAmmo <= 0)
-        {
-            canThrow = false;
         }
     }
 
@@ -70,7 +82,8 @@ public class GrenadeThrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GrenadeEgg"))
         {
-            ammoPickup =+ ammoPickup;
+            currentAmmo = +ammoPickup;
+            Destroy(other.gameObject);
         }
     }
 }

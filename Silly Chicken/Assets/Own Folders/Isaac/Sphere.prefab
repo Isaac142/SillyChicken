@@ -125,6 +125,7 @@ MonoBehaviour:
   radius: 5
   power: 20
   upForce: 10
+  damage: 50
   delay: 1
   hasExploded: 0
 --- !u!1 &9145740835197856059
