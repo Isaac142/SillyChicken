@@ -106,3 +106,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1011695274544352028, guid: 431696442ead64c40adb10d57fc931d1,
     type: 3}
+  seedScore: {fileID: 0}
+  seedValue: 1

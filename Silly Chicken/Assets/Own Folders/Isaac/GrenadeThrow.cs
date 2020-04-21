@@ -14,7 +14,6 @@ public class GrenadeThrow : MonoBehaviour
     public bool hasAmmo;
 
     public float forwardThrowForce;
-    public float upwardThrowForce;
     public GameObject grenadePrefab;
     public Transform firingPoint;
 
