@@ -7,17 +7,16 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
-    public AudioSource _audio;
-    public Animator animator;
+  
 
 
 
     void Start()
     {
-        _audio = GetComponent<AudioSource>();
+       
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+      
 
     }
 
@@ -25,6 +24,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
+
         if (distance <= lookRadius)
         {
 
@@ -32,17 +32,14 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= agent.stoppingDistance)
             {
-                //attack target
+        
 
 
                 FaceTarget();
 
 
             }
-            else
-            {
-               // animator.SetBool("isSprinting", false);
-            }
+           
         }
     }
 
@@ -53,6 +50,21 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
        
 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // animator.SetTrigger("death");
+
+            //gameManager.RestartGame();
+            Debug.Log("Silly chimken is ded");
+            Destroy(this.gameObject);
+
+
+
+        }
     }
 
     void OnDrawGizmosSelected()
