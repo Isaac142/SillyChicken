@@ -81,7 +81,7 @@ public class GrenadeThrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GrenadeEgg"))
         {
-            currentAmmo = +ammoPickup;
+            currentAmmo += ammoPickup;
             Destroy(other.gameObject);
         }
     }

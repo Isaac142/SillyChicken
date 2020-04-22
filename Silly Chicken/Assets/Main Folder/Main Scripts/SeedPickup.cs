@@ -9,7 +9,7 @@ public class SeedPickup : MonoBehaviour
 
     public static SeedPickup instance;
 
-    public Text seedScore;
+    public GameManager GM;
     int score;
 
     public int seedValue = 1;
@@ -22,7 +22,9 @@ public class SeedPickup : MonoBehaviour
             instance = this;
         }
 
-        seedScore.text = "x0";
+        GameObject gm = GameObject.Find("GameManager");
+
+        GM = gm.GetComponent<GameManager>(); 
     }
 
     // Update is called once per frame
@@ -46,6 +48,6 @@ public class SeedPickup : MonoBehaviour
     public void ChangeScore(int seedValue)
     {
         score += seedValue;
-        seedScore.text = "x" + score.ToString();
+        GM.seedText.text = "x" + score.ToString();
     }
 }

@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform firingPoint;
     public GameObject grenade;
 
+    public UIManager UI;
+    public GameManager GM;
+
 
     //Calling on the CharacterController Component
     void Start()
@@ -104,6 +107,24 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isGrounded = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name);
+
+        if (other.gameObject.CompareTag("WinBox"))
+        {
+            Debug.Log("hit");
+            UI.winPanel.SetActive(true);
+            Time.timeScale = 0f;
+            UI.inGamePanel.SetActive(false);
+            GM.PCMX.canMove = false;
+            GM.PCMY.canMove = false;
+            GM.wonGame = true;
+            //player.GetComponent<Renderer>().material.color = Color.green;
+            //SceneManager.LoadScene("_Scene_01");
         }
     }
 }
