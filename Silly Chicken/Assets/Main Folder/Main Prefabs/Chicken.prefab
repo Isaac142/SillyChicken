@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4075746015134911212
+--- !u!1 &547159507
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4075746015134911213}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4075746015134911213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075746015134911212}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.3, z: -0.589}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4075746016564223171}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &4075746015586946538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4075746015586946541}
-  - component: {fileID: 4075746015586946540}
-  - component: {fileID: 4075746015586946539}
+  - component: {fileID: 547159510}
+  - component: {fileID: 547159509}
+  - component: {fileID: 547159508}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -48,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4075746015586946541
+--- !u!4 &547159510
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075746015586946538}
-  m_LocalRotation: {x: 0.113498, y: -0, z: -0, w: 0.9935382}
-  m_LocalPosition: {x: 0, y: 1.1790001, z: -2.89}
+  m_GameObject: {fileID: 547159507}
+  m_LocalRotation: {x: 0.17217135, y: -0, z: -0, w: 0.985067}
+  m_LocalPosition: {x: 0, y: 0.98, z: -1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4075746016564223171}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 13.034, y: 0, z: 0}
---- !u!20 &4075746015586946540
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 19.828001, y: 0, z: 0}
+--- !u!20 &547159509
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075746015586946538}
+  m_GameObject: {fileID: 547159507}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -104,14 +74,44 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4075746015586946539
+--- !u!81 &547159508
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4075746015586946538}
+  m_GameObject: {fileID: 547159507}
   m_Enabled: 1
+--- !u!1 &4075746015134911212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4075746015134911213}
+  m_Layer: 0
+  m_Name: FiringPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4075746015134911213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075746015134911212}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: -0.589}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4075746016564223171}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4075746015593361021
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,8 +509,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4075746016772344450}
-  - {fileID: 4075746015586946541}
   - {fileID: 4075746015134911213}
+  - {fileID: 547159510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -543,8 +543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axes: 1
-  sensX: 15
-  sensY: 15
+  sensX: 1
+  sensY: 1
   minX: -360
   maxX: 360
   minY: -60
@@ -571,7 +571,7 @@ MonoBehaviour:
   distanceGround: 1.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   firingPoint: {fileID: 4075746015134911213}
   grenade: {fileID: 450895145398388338, guid: db477a400544f5e41aed377157589278, type: 3}
 --- !u!114 &4075746016564223173

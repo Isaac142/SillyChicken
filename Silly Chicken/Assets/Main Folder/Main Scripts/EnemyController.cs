@@ -23,27 +23,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        if (distance <= lookRadius)
-        {
-
-            agent.SetDestination(target.position);
-
-            if (distance <= agent.stoppingDistance)
-            {
-        
-
-
-                FaceTarget();
-
-
-            }
-           
-        }
+        LookRadius();
     }
 
-    void FaceTarget()
+    public void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -52,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -60,7 +43,7 @@ public class EnemyController : MonoBehaviour
 
             //gameManager.RestartGame();
             Debug.Log("Silly chimken is ded");
-            Destroy(this.gameObject);
+            Destroy(other.gameObject);
 
 
 
@@ -71,5 +54,27 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    public void LookRadius()
+    {
+        float dist = Vector3.Distance(target.position, transform.position);
+
+        if (dist <= lookRadius)
+        {
+
+            agent.SetDestination(target.position);
+
+            if (dist <= agent.stoppingDistance)
+            {
+
+
+
+                FaceTarget();
+
+
+            }
+
+        }
     }
 }

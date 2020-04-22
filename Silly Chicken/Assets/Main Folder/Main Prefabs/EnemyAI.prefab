@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9014860326940873374}
   - component: {fileID: 9014860326940873373}
   - component: {fileID: 9014860326940873372}
+  - component: {fileID: 9014860325878989460}
   m_Layer: 0
   m_Name: EnemyAI
   m_TagString: Untagged
@@ -84,8 +85,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
+  m_Radius: 0.7
+  m_Height: 3.3
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &9014860326940873373
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88aa964a3db85424299068a8b8c6b3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 3
   rotSpeed: 100
 --- !u!114 &9014860326940873372
 MonoBehaviour:
@@ -114,9 +115,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fcefa14665fd04fb6e25a4fe4e2e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
-  _audio: {fileID: 0}
-  animator: {fileID: 0}
+  lookRadius: 15
+--- !u!114 &9014860325878989460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014860326940873369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01540397d1ad8f8449fd1ab8342eb564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  spawn: {fileID: 0}
 --- !u!1 &9014860327269810080
 GameObject:
   m_ObjectHideFlags: 0
