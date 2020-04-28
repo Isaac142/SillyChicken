@@ -862,7 +862,7 @@ PrefabInstance:
     - target: {fileID: 9014860326940873369, guid: 738d9b5fe84d1ab40878cd6fe5ab5e38,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9014860326940873375, guid: 738d9b5fe84d1ab40878cd6fe5ab5e38,
         type: 3}
@@ -922,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 9014860326940873374, guid: 738d9b5fe84d1ab40878cd6fe5ab5e38,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 738d9b5fe84d1ab40878cd6fe5ab5e38, type: 3}
@@ -2118,7 +2118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1055793480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,6 +2579,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken
       objectReference: {fileID: 0}
+    - target: {fileID: 4075746016564223169, guid: e49ff385cec83f540801bbe6ff33de3d,
+        type: 3}
+      propertyPath: sensX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075746016564223169, guid: e49ff385cec83f540801bbe6ff33de3d,
+        type: 3}
+      propertyPath: sensY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075746016564223171, guid: e49ff385cec83f540801bbe6ff33de3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2644,6 +2654,16 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 643343626}
+    - target: {fileID: 4075746016564223168, guid: e49ff385cec83f540801bbe6ff33de3d,
+        type: 3}
+      propertyPath: velocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947851888471988528, guid: e49ff385cec83f540801bbe6ff33de3d,
+        type: 3}
+      propertyPath: sensX
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49ff385cec83f540801bbe6ff33de3d, type: 3}
 --- !u!1 &1511609561
@@ -3652,6 +3672,47 @@ PrefabInstance:
       propertyPath: m_TagString
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: PCMX
+      value: 
+      objectReference: {fileID: 1376119990}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: PCMY
+      value: 
+      objectReference: {fileID: 3947851888471988528}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 643343626}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 2015449195}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: seedText
+      value: 
+      objectReference: {fileID: 1327835236}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: seedScore
+      value: 
+      objectReference: {fileID: 1327835236}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: SP
+      value: 
+      objectReference: {fileID: 6528795122527367303, guid: b3b54dd767fe2b44abd8d49d29c868fd,
+        type: 3}
+    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
+        type: 3}
+      propertyPath: GT
+      value: 
+      objectReference: {fileID: 1376119988}
     - target: {fileID: 2878836512134989498, guid: 1d512c689a843e7489d29d7de565da22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3712,47 +3773,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1376119986}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: PCMX
-      value: 
-      objectReference: {fileID: 1376119990}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: PCMY
-      value: 
-      objectReference: {fileID: 3947851888471988528}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: UI
-      value: 
-      objectReference: {fileID: 643343626}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: timerText
-      value: 
-      objectReference: {fileID: 2015449195}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: seedText
-      value: 
-      objectReference: {fileID: 1327835236}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: seedScore
-      value: 
-      objectReference: {fileID: 1327835236}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: SP
-      value: 
-      objectReference: {fileID: 6528795122527367303, guid: b3b54dd767fe2b44abd8d49d29c868fd,
-        type: 3}
-    - target: {fileID: 2878836512134989496, guid: 1d512c689a843e7489d29d7de565da22,
-        type: 3}
-      propertyPath: GT
-      value: 
-      objectReference: {fileID: 1376119988}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d512c689a843e7489d29d7de565da22, type: 3}
 --- !u!114 &3947851888471988528 stripped
