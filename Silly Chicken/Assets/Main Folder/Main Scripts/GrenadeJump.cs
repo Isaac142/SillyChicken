@@ -9,6 +9,8 @@ public class GrenadeJump : MonoBehaviour
     public float upForce = 10f;
     public int damage;
 
+    public GameObject explodeEffect;
+
     public float delay = 3f;
     float countdown;
     public bool hasExploded = false;
@@ -27,6 +29,7 @@ void Start()
         if(countdown <= 0f && !hasExploded)
         {
             Explode();
+            Instantiate(explodeEffect, transform.position, transform.rotation);
             hasExploded = true;
         }
     }
