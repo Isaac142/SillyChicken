@@ -42,9 +42,13 @@ public class PlayerMovement : MonoBehaviour
     //Calling the PlayerJumping function
     void Update()
     {
-        Movement();
         Grounded();
         Jump();
+    }
+
+    void FixedUpdate()
+    {
+        Movement();
     }
 
     //Creating the player jumping, and player movement function.
