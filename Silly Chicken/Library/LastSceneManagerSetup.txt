@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Main Folder/Main Scene/Level 1.unity
+=======
+- path: Assets/Main Folder/Main Scene/_Scene_00.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
