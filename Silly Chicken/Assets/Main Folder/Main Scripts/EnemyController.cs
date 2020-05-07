@@ -7,7 +7,9 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
-  
+
+    public GameManager GM;
+
 
 
 
@@ -16,7 +18,11 @@ public class EnemyController : MonoBehaviour
        
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-      
+
+        GameObject gm = GameObject.Find("GameManager");
+
+        GM = gm.GetComponent<GameManager>();
+
 
     }
 
@@ -43,10 +49,8 @@ public class EnemyController : MonoBehaviour
 
             //gameManager.RestartGame();
             Debug.Log("Silly chimken is ded");
-            Destroy(other.gameObject);
-
-
-
+            //Destroy(other.gameObject);
+            GM.timer = 0f;
         }
     }
 

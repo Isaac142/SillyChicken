@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public GrenadeThrow GT;
 
+    public GameObject player;
+
     void Awake()
     {
         if (instance == null)

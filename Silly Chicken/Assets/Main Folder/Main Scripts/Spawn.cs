@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour
 {
     public static Spawn instance;
     public GameObject enemy;
-    public GameObject spawnPoint;
+    public Transform[] spawnPoints;
 
     private void Awake()
     {
@@ -29,7 +29,8 @@ public class Spawn : MonoBehaviour
 
     public void Spawning()
     {
-        Instantiate(enemy, spawnPoint.transform.position, Quaternion.identity);
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        Instantiate(enemy, spawnPoints[spawnPointIndex].position, Quaternion.identity);
     }
 
     public IEnumerator WaitToSpawn()
