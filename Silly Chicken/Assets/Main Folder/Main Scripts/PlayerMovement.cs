@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     //Calling on the CharacterController Component
     void Start()
     {
+        GameObject gm = GameObject.Find("GameManager");
+
+        GM = gm.GetComponent<GameManager>();
+
         controller = GetComponent<Rigidbody>();
 
         sprinting = false;
