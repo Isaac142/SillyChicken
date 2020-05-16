@@ -17,6 +17,8 @@ public class GrenadeThrow : MonoBehaviour
     public GameObject grenadePrefab;
     public Transform firingPoint;
 
+    public GameManager GM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,24 @@ public class GrenadeThrow : MonoBehaviour
         hasAmmo = true;
         currentAmmo = maxAmmo;
 
+        GameObject gm = GameObject.Find("GameManager");
+
+        GM = gm.GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        GM.eggText.text = "x" + currentAmmo;
+
         if (Input.GetButtonDown("Fire1"))
         {
             ThrowGrenade();
         }
+
+        
 
         if (currentAmmo > maxAmmo)
         {

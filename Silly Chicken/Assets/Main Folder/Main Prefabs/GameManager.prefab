@@ -73,13 +73,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c5a71900c3a24ab873f075895f18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 35
+  timer: 300
   PCMX: {fileID: 0}
   PCMY: {fileID: 0}
   isPaused: 0
   UI: {fileID: 0}
   timerText: {fileID: 0}
   seedText: {fileID: 0}
-  seedScore: {fileID: 0}
-  SP: {fileID: 0}
+  eggText: {fileID: 0}
+  SP: {fileID: 6528795122527367303, guid: b3b54dd767fe2b44abd8d49d29c868fd, type: 3}
   wonGame: 0
+  GT: {fileID: 0}
+  player: {fileID: 4075746016564223183, guid: e49ff385cec83f540801bbe6ff33de3d, type: 3}

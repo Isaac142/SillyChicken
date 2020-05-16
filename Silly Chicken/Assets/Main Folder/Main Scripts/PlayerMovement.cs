@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded;
 
+    public bool canJump;
+
     public float distanceGround = 1.2f;
 
     public LayerMask groundLayer;
@@ -41,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         speed = baseSpeed;
 
         Cursor.visible = false;
+
+        canJump = true;
     }
 
     //Calling the PlayerJumping function
@@ -91,16 +95,23 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         //controller.AddForce(new Vector3(0, velocity, 0));
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if(isGrounded)
         {
-            controller.AddForce(new Vector3(0, velocity, 0));
+            if(canJump)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    controller.AddForce(new Vector3(0, velocity, 0));
+
+                    if(isGrounded)
+                    {
+                        StartCoroutine(JumpingDelay());
+                    }
+                }
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded)
-        {
-            controller.AddForce(new Vector3(0, velocity, 0) * 2);
-        }
+        Debug.Log(velocity);
     }
 
     void Grounded()
@@ -134,5 +145,12 @@ public class PlayerMovement : MonoBehaviour
             //player.GetComponent<Renderer>().material.color = Color.green;
             //SceneManager.LoadScene("_Scene_01");
         }
+    }
+
+    public IEnumerator JumpingDelay()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(1f);
+        canJump = true;
     }
 }

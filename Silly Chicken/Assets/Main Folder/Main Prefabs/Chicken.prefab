@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 4075746016564223168}
   - component: {fileID: 4075746016564223173}
   - component: {fileID: 4075746016564223172}
+  - component: {fileID: 4075746016564223184}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Player
@@ -585,11 +586,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   baseSpeed: 5
-  sprintSpeed: 20
+  sprintSpeed: 7
   sprinting: 0
   velocity: 200
   isGrounded: 0
-  distanceGround: 1.2
+  distanceGround: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -609,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62e7a12a4001d44a88e5f03cbbbd4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 5
+  maxAmmo: 10
   currentAmmo: 0
   ammoPickup: 1
   canThrow: 1
@@ -618,6 +619,7 @@ MonoBehaviour:
   grenadePrefab: {fileID: 450895145398388338, guid: db477a400544f5e41aed377157589278,
     type: 3}
   firingPoint: {fileID: 4075746015134911213}
+  GM: {fileID: 0}
 --- !u!65 &4075746016564223172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -631,6 +633,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7777288, y: 1.3469251, z: 1.4603877}
   m_Center: {x: 0, y: -0.0653739, z: 0.09479213}
+--- !u!114 &4075746016564223184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075746016564223183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139f5e8ec36ec2044b3502add6c3c301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4075746016564223183}
 --- !u!1 &4075746016772344449
 GameObject:
   m_ObjectHideFlags: 0

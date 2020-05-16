@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Text timerText;
     public Text seedText;
+    public Text eggText;
 
     public SeedPickup SP;
 

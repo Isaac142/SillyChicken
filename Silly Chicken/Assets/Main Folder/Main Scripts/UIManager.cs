@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 
     [Header("In Game UI")]
     public Image seed;
+    public Image egg;
 
     // Start is called before the first frame update
     void Start()
