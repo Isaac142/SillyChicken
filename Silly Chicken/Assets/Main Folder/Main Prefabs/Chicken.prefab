@@ -126,13 +126,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4075746015134911212}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.3, z: -0.589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.275, z: 0.893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4075746016564223171}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4075746015593361021
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +590,7 @@ MonoBehaviour:
   sprinting: 0
   velocity: 200
   isGrounded: 0
+  canJump: 0
   distanceGround: 0.5
   groundLayer:
     serializedVersion: 2
@@ -615,7 +616,7 @@ MonoBehaviour:
   ammoPickup: 1
   canThrow: 1
   hasAmmo: 0
-  forwardThrowForce: 0
+  forwardThrowForce: 5
   grenadePrefab: {fileID: 450895145398388338, guid: db477a400544f5e41aed377157589278,
     type: 3}
   firingPoint: {fileID: 4075746015134911213}
