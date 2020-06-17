@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrenadeJump : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class GrenadeJump : MonoBehaviour
     public float power;
     public float upForce;
     public int damage;
-
+    public GameObject timerCanvas;
+    //public Text timer;
+        
     public GameObject explodeEffect;
 
     public float delay = 3f;
@@ -30,6 +33,7 @@ void Start()
         {
             Explode();
             Instantiate(explodeEffect, transform.position, transform.rotation);
+            Destroy(timerCanvas);
             hasExploded = true;
         }
     }

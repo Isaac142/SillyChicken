@@ -9,6 +9,10 @@ public class Timer : MonoBehaviour
 
     public Text timeText;
 
+    public static Timer instance;
+
+    public bool timeUp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +32,25 @@ public class Timer : MonoBehaviour
 
         if (timer <= 30)
         {
-            timeText.text = "Time Left: " + timer.ToString("F2");
+            //timeText.text = "Time Left: " + timer.ToString("F2");
+
+            timeText.text = timer.ToString("F2");
         }
         else
         {
-            timeText.text = "Time Left: " + timerString;
+            //timeText.text = "Time Left: " + timerString;
+
+            timeText.text = timerString;
         }
 
         timer -= Time.deltaTime;
     }
+
+    /*public void TimeUp()
+    {
+        if (timer <= 0)
+        {
+            timeUp = true;
+        }
+    }*/
 }
