@@ -113,7 +113,7 @@ MonoBehaviour:
   timerCanvas: {fileID: 6524348224173388798}
   explodeEffect: {fileID: 1011695274544352028, guid: 855b389a3b56de749bfe739dc4c8b4f4,
     type: 3}
-  delay: 3
+  delay: 1
   hasExploded: 0
 --- !u!54 &3785578713554433759
 Rigidbody:
