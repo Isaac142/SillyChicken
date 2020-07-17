@@ -489,6 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbae730d3b1ffb54aa7770ac0ca04536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
+  timer: 1
   timeText: {fileID: 3477730709410269826}
   timeUp: 0
