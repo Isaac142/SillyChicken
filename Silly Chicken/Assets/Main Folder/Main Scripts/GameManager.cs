@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     public bool wonGame;
 
+    public bool controlPanelCheck;
+
     public static GameManager instance = null;
 
     public GrenadeThrow GT;
@@ -40,9 +42,11 @@ public class GameManager : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-        Cursor.visible = false;
-
+        Cursor.visible = true;
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        controlPanelCheck = true;
+
     }
 
     // Update is called once per frame
@@ -75,16 +79,21 @@ public class GameManager : MonoBehaviour
             UI.inGamePanel.SetActive(false);
             Cursor.visible = true;
         }
-        else if(!isPaused && !wonGame)
+
+        if(UI.controlsPanelStart.activeSelf == false)
+        {
+            controlPanelCheck = false;
+        }
+        if(!isPaused && !wonGame && !controlPanelCheck)
         {
             Debug.Log("Not Paused");
             timer -= Time.deltaTime;
             Time.timeScale = 1f;
             PCMX.canMove = true;
-            PCMY.canMove = true; 
-            //GT.canThrow = true;
+            PCMY.canMove = true;
+            GT.canThrow = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
@@ -95,6 +104,15 @@ public class GameManager : MonoBehaviour
                 PCMX.canMove = false;
                 PCMY.canMove = false;
                 GT.canThrow = false;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
+            if (!isPaused)
+            {
+                UI.pausePanel.SetActive(false);
+                UI.winPanel.SetActive(false);
+                UI.lostPanel.SetActive(false);
+                UI.controlsPanel.SetActive(false);
             }
         }
     }

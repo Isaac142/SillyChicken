@@ -42,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
         speed = baseSpeed;
 
-        Cursor.visible = false;
-
         canJump = true;
     }
 

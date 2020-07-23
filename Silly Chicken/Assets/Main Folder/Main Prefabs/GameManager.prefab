@@ -83,5 +83,6 @@ MonoBehaviour:
   eggText: {fileID: 0}
   SP: {fileID: 6528795122527367303, guid: b3b54dd767fe2b44abd8d49d29c868fd, type: 3}
   wonGame: 0
+  controlPanelCheck: 0
   GT: {fileID: 0}
   player: {fileID: 4075746016564223183, guid: e49ff385cec83f540801bbe6ff33de3d, type: 3}

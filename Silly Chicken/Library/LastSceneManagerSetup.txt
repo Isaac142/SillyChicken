@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Main Folder/Main Scene/Level 1.unity
-  isLoaded: 1
-  isActive: 1

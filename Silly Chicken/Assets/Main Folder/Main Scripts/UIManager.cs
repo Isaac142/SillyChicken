@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public GameManager GM;
     public GameObject winPanel;
     public GameObject lostPanel;
+    public GameObject controlsPanel;
+    public GameObject controlsPanelStart;
 
     [Header("In Game UI")]
     public Image seed;
