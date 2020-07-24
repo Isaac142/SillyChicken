@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
+    public bool isLost;
+
     void Awake()
     {
         if (instance == null)
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         controlPanelCheck = true;
+        isLost = false;
 
     }
 
@@ -78,20 +81,25 @@ public class GameManager : MonoBehaviour
             UI.lostPanel.SetActive(true);
             UI.inGamePanel.SetActive(false);
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         if(UI.controlsPanelStart.activeSelf == false)
         {
             controlPanelCheck = false;
         }
-        if(!isPaused && !wonGame && !controlPanelCheck)
+
+        if(UI.lostPanel.activeSelf == true)
+        {
+            isLost = true;
+        }
+        if(!isPaused && !wonGame && !controlPanelCheck && !isLost)
         {
             Debug.Log("Not Paused");
             timer -= Time.deltaTime;
             Time.timeScale = 1f;
             PCMX.canMove = true;
             PCMY.canMove = true;
-            GT.canThrow = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -113,6 +121,7 @@ public class GameManager : MonoBehaviour
                 UI.winPanel.SetActive(false);
                 UI.lostPanel.SetActive(false);
                 UI.controlsPanel.SetActive(false);
+                GT.canThrow = true;
             }
         }
     }
