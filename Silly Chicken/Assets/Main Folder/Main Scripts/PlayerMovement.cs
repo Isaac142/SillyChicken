@@ -143,8 +143,14 @@ public class PlayerMovement : MonoBehaviour
             //player.GetComponent<Renderer>().material.color = Color.green;
             //SceneManager.LoadScene("_Scene_01");
         }
-    }
 
+
+        if (other.gameObject.CompareTag("Water"))
+        {
+            GM.timer = 0f;
+        }
+    }
+    
     public IEnumerator JumpingDelay()
     {
         canJump = false;
