@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

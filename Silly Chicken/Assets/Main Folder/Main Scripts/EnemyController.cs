@@ -10,20 +10,30 @@ public class EnemyController : MonoBehaviour
 
     public GameManager GM;
 
+    public Health health;
+
+    public static EnemyController instance;
+
+    public Transform respawnPoint;
+
 
 
 
     void Start()
     {
-       
-        target = PlayerManager.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
+        if (instance == null)
+        {
+            instance = this;
+        }
 
         GameObject gm = GameObject.Find("GameManager");
 
         GM = gm.GetComponent<GameManager>();
 
+        target = PlayerManager.instance.player.transform;
 
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -50,7 +60,9 @@ public class EnemyController : MonoBehaviour
             //gameManager.RestartGame();
             Debug.Log("Silly chimken is ded");
             //Destroy(other.gameObject);
-            GM.timer = 0f;
+            health.health--;
+            target.transform.position = respawnPoint.transform.position;
+            //GM.timer = 0f;
         }
     }
 

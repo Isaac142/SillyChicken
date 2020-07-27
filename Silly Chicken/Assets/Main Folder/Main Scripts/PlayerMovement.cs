@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public UIManager UI;
     public GameManager GM;
 
+    public Health ht;
+
 
     //Calling on the CharacterController Component
     void Start()
@@ -147,7 +149,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Water"))
         {
-            GM.timer = 0f;
+            ht.health--;
+            //GM.timer = 0f;
         }
     }
     

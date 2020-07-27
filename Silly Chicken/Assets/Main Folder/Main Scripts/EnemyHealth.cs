@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealth <=1)
         {
-            Spawn.instance.callSpawn();
+            //Spawn.instance.callSpawn();
             Destroy(gameObject);
         }
     }

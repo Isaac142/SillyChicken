@@ -12,11 +12,14 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public GameManager gM;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject gm = GameObject.Find("GameManager");
+
+        gM = gm.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,11 @@ public class Health : MonoBehaviour
         if(health > numOfHearts)
         {
             health = numOfHearts;
+        }
+
+        if(health <= 0)
+        {
+            gM.timer = 0f;
         }
 
 
