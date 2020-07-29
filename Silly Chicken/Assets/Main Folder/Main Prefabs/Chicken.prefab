@@ -55,8 +55,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 1000.01
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -600,6 +600,9 @@ MonoBehaviour:
   grenade: {fileID: 5120841097506029092, guid: 5266a6a4344bb4842a03dda19667d81e, type: 3}
   UI: {fileID: 0}
   GM: {fileID: 0}
+  ht: {fileID: 1666171323}
+  respawnPoint: {fileID: 0}
+  target: {fileID: 47}
 --- !u!114 &121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +671,7 @@ MonoBehaviour:
   - {fileID: 0}
   fullHeart: {fileID: 21300000, guid: f4af41ba92b78e8488d97454c07f19fb, type: 3}
   emptyHeart: {fileID: 21300000, guid: a573d428918244d4487b2890821a0ea0, type: 3}
+  gM: {fileID: 0}
 --- !u!1 &48
 GameObject:
   m_ObjectHideFlags: 0

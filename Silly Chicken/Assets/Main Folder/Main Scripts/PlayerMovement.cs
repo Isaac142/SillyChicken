@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Health ht;
 
+    public GameObject respawnPoint;
+    public GameObject target;
+
 
     //Calling on the CharacterController Component
     void Start()
@@ -147,10 +150,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (other.gameObject.CompareTag("Water"))
+        if (other.CompareTag("Water"))
         {
-            ht.health--;
-            //GM.timer = 0f;
+            ht.health = ht.health - 1;
+            //target.transform.position = respawnPoint.transform.position;
         }
     }
     
