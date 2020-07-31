@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139f5e8ec36ec2044b3502add6c3c301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3644463411517053176, guid: 72e2aef1128a1d342bc89af757690fdd, type: 3}
 --- !u!114 &2878836512134989497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,4 +85,5 @@ MonoBehaviour:
   wonGame: 0
   controlPanelCheck: 0
   GT: {fileID: 0}
-  player: {fileID: 4075746016564223183, guid: e49ff385cec83f540801bbe6ff33de3d, type: 3}
+  player: {fileID: 0}
+  isLost: 0

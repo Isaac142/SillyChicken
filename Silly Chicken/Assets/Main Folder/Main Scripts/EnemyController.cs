@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
-    Transform target;
+    public Transform target;
     NavMeshAgent agent;
 
     public GameManager GM;
