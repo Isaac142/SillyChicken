@@ -58,6 +58,7 @@ void Start()
         }
 
         Destroy(gameObject);
+        SoundManager.PlaySound("Explode");
         Debug.Log("BOOM");
     }
 }

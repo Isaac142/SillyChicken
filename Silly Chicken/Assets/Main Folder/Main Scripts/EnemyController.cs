@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Silly chimken is ded");
             //Destroy(other.gameObject);
             health.health--;
+            SoundManager.PlaySound("Hurt");
             target.transform.position = respawnPoint.transform.position;
             //GM.timer = 0f;
         }

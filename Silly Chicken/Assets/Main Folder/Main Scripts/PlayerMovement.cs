@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canJump;
 
+    //public bool isWalking;
+
     public float distanceGround = 1.2f;
 
     public LayerMask groundLayer;
@@ -48,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         speed = baseSpeed;
 
         canJump = true;
+
+        //isWalking = false;
     }
 
     //Calling the PlayerJumping function
@@ -60,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+        
+        /*if(isWalking)
+        {
+            SoundManager.PlaySound("Chicken");
+        }*/
     }
 
     //Creating the player jumping, and player movement function.
@@ -93,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
             speed = baseSpeed;
         }
 
+        //isWalking = true;
     }
 
     public void Jump()
