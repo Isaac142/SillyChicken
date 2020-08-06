@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject respawnPoint;
     public GameObject target;
 
+    public Animator anim;
+
+    public bool walkHack;
 
     //Calling on the CharacterController Component
     void Start()
@@ -80,6 +83,18 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(new Vector3(h, 0, v) * speed * Time.deltaTime);
 
+        if (Mathf.Abs(h) > 0.1f)
+            walkHack = true;
+        else
+            StartCoroutine(ResetMovement());
+
+        if (Mathf.Abs(v) > 0.1f)
+            walkHack = true;
+        else
+            StartCoroutine(ResetMovement());
+
+        anim.SetBool("WalkHack", walkHack);
+
         Jump();
 
         if (Input.GetKey(KeyCode.LeftShift) && !sprinting && isGrounded)
@@ -115,8 +130,10 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     controller.AddForce(new Vector3(0, velocity, 0));
+                    anim.SetTrigger("Jump");
+                    anim.SetBool("Air", !isGrounded);
 
-                    if(isGrounded)
+                    if (isGrounded)
                     {
                         StartCoroutine(JumpingDelay());
                     }
@@ -172,5 +189,11 @@ public class PlayerMovement : MonoBehaviour
         canJump = false;
         yield return new WaitForSeconds(1f);
         canJump = true;
+    }
+
+    public IEnumerator ResetMovement()
+    {
+        yield return new WaitForSeconds(0.1f);
+        walkHack = false;
     }
 }

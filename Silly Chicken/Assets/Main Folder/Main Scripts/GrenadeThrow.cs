@@ -19,6 +19,8 @@ public class GrenadeThrow : MonoBehaviour
 
     public GameManager GM;
 
+    public PlayerMovement pM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,12 +67,12 @@ public class GrenadeThrow : MonoBehaviour
     {
         if (hasAmmo)
         {
+            pM.anim.SetTrigger("GrenadeThrow");
             if (canThrow)
             {
                 GameObject grenade = Instantiate(grenadePrefab, firingPoint.transform.position, firingPoint.transform.rotation);
                 Rigidbody rb = grenade.GetComponent<Rigidbody>();
                 rb.AddForce(transform.forward * forwardThrowForce, ForceMode.VelocityChange);
-
                 currentAmmo--;
                 Debug.Log(currentAmmo);
                 if (currentAmmo >= 1)

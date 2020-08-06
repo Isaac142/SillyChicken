@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
+
+    public Animator anim;
    
 
     // Start is called before the first frame update
@@ -39,9 +41,8 @@ public class EnemyAI : MonoBehaviour
         if (isWalking == true)
         {
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
-           
         }
-       
+
 
 
     }
@@ -57,7 +58,8 @@ public class EnemyAI : MonoBehaviour
         isWandering = true;
         yield return new WaitForSeconds(walkWait);
         isWalking = true;
-       
+
+        anim.SetBool("WalkHack", isWalking);
         yield return new WaitForSeconds(walkTime);
         isWalking = false;
        

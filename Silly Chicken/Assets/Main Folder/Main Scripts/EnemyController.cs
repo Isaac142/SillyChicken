@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
 
     public Transform respawnPoint;
 
+    public Animator anim;
 
 
 
@@ -58,6 +59,7 @@ public class EnemyController : MonoBehaviour
             // animator.SetTrigger("death");
 
             //gameManager.RestartGame();
+            anim.SetTrigger("Attack");
             Debug.Log("Silly chimken is ded");
             //Destroy(other.gameObject);
             health.health--;
