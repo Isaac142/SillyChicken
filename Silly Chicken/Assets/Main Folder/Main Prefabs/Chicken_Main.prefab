@@ -855,12 +855,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   firingPoint: {fileID: 6052862265533969344}
-  grenade: {fileID: 5120841097506029092, guid: 5266a6a4344bb4842a03dda19667d81e, type: 3}
+  grenade: {fileID: 6809762286398606674, guid: 4cad1dca95e73aa438f34826e3d64bd4, type: 3}
   UI: {fileID: 0}
   GM: {fileID: 0}
   ht: {fileID: 7744912562769476395}
   respawnPoint: {fileID: 0}
   target: {fileID: 3644463411517053176}
+  anim: {fileID: 3008922438227844678}
+  walkHack: 0
 --- !u!114 &2124756927880598519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,10 +881,11 @@ MonoBehaviour:
   canThrow: 1
   hasAmmo: 0
   forwardThrowForce: 5
-  grenadePrefab: {fileID: 5120841097506029092, guid: 5266a6a4344bb4842a03dda19667d81e,
+  grenadePrefab: {fileID: 6809762286398606674, guid: 4cad1dca95e73aa438f34826e3d64bd4,
     type: 3}
   firingPoint: {fileID: 6052862265533969344}
   GM: {fileID: 0}
+  pM: {fileID: 0}
 --- !u!114 &7791685743969185734
 MonoBehaviour:
   m_ObjectHideFlags: 0

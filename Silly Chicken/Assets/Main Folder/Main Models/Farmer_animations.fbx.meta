@@ -232,6 +232,13 @@ ModelImporter:
     400224: R_WristFK_GRP
     400226: Skeleton_GRP
     2100000: lambert1
+    2100002: lambert3
+    2100004: lambert7
+    2100006: lambert4
+    2100008: lambert6
+    2100010: lambert5
+    2100012: lambert8
+    2100014: lambert2
     4300000: FARMERFIXEDDD:pCube5
     7400000: Idle
     7400002: Walk
@@ -374,7 +381,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
